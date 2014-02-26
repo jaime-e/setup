@@ -46,3 +46,9 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+#instalar cheerio para html en servidor
+npm install cheerio
+
+#instalar restler  http client library
+npm install restler
+
