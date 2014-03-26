@@ -52,3 +52,5 @@ npm install cheerio
 #instalar restler  http client library
 npm install restler
 
+#instalar pip para manejar paquetes de piython
+sudo apt-get install python-pip
