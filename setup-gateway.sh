@@ -33,11 +33,11 @@ sudo npm install -g forever
 npm install
 
 #migrate database to create network tables
-export DATABASE_URL=postgres://postgres:password@localhost:5432/ripple_gateway
-cd node_modules/ripple-gateway-data-sequelize
-db-migrate up
-cd ../..
+#export DATABASE_URL=postgres://postgres:password@localhost:5432/ripple_gateway
+#cd node_modules/ripple-gateway-data-sequelize
+#db-migrate up
+#cd ../..
 
 #start the gateway rest api server
-bin/gateway start
+#bin/gateway start
 
