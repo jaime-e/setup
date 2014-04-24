@@ -49,6 +49,8 @@ sudo apt-get -y install libpq-dev
 sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get -y update
 sudo apt-get -y install nodejs
+sudo apt-get -y install postgresql
+sudo apt-get -y install postgresql-client
 
 #instalar restler  http client library
 npm install restler
