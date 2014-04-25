@@ -1,51 +1,12 @@
 #!/bin/bash
-# simple dev environment for ubuntu no heroku
-# for headless setup. 
-
-# Install nvm: node-version manager
-# https://github.com/creationix/nvm
-sudo apt-get install -y curl
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-
-# Load nvm and install latest production node
-source $HOME/.nvm/nvm.sh
-nvm install v0.10.12
-nvm use v0.10.12
-
-# Install jshint to allow checking of JS code within emacs
-# http://jshint.com/
-npm install -g jshint
-
-# Install rlwrap to provide libreadline features with node
-# See: http://nodejs.org/api/repl.html#repl_repl
-sudo apt-get install -y rlwrap
-
-# Install emacs24
-# https://launchpad.net/~cassou/+archive/emacs
-sudo add-apt-repository -y ppa:cassou/emacs
-sudo apt-get -qq update
-sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
-
-
-# git pull and install dotfiles as well
-cd $HOME
-if [ -d ./dotfiles/ ]; then
-    mv dotfiles dotfiles.old
-fi
-if [ -d .emacs.d/ ]; then
-    mv .emacs.d .emacs.d~
-fi
-git clone https://github.com/jaime-e/dotfiles.git
-ln -sb dotfiles/.screenrc .
-ln -sb dotfiles/.bash_profile .
-ln -sb dotfiles/.bashrc .
-ln -sb dotfiles/.bashrc_custom .
-ln -sf dotfiles/.emacs.d .
+# ripple gateway setup
 
 #instalar python, g++, make, libpq-dev, nodejs
 
 sudo apt-get -y install python-software-properties
 sudo apt-get -y install python
+sudo apt-get -y install g++
+sudo apt-get -y install make
 sudo apt-get -y install libpq-dev
 sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get -y update
@@ -57,17 +18,36 @@ sudo -u postgres psql postgres
 sudo -u postgres createdb ripple_gateway
 
 #poner como editar postgres.conf para cambiar los postgre.conf para cambiar la ip de escucha
+cd /etc/postgresql/9.3/main/
+#sudo chmod 777 postgresql.conf pg_hba.conf
+#sudo sed -i '59 s/#//' postgresql.conf
+#sudo sed -i '59 s/localhost/*/' postgresql.conf
+#sudo sed -i '92 s+127.0.0.1/32+0.0.0.0/0+' pg_hba.conf
+#sudo sed -i '94 s+::1/128+::/0+' pg_hba.conf
+#cd $HOME
+#sudo /etc/init.d/postgresql restart
+#export DATABASE_URL=postgres://postgres:pass@54.186.97.132:5432/ripple_gateway?native=true
 
-sudo /etc/init.d/postgresql restart
+#instalar ripple-gateway api
 
-sudo npm install -g pg
-sudo npm install -g db-migrate
-sudo npm install -g forever
-sudo npm install -g grunt-cli
-sudo npm install grunt
-sudo npm install grunt-db-migrate
+#sudo npm install -g pg
+#sudo npm install -g db-migrate
+#sudo npm install -g forever
+#sudo npm install -g grunt-cli
+#sudo npm install -g grunt
+#sudo npm install -g grunt-db-migrate
+#sudo npm install --save ripple-gateway
+
+#cd node_modules/ripple-gateway/config
+#sudo sed -i '8 s+localhost+ec2-54-186-97-132.us-west-2.compute.amazonaws.com+' config.js
+#sudo sed -i '9 s+password+pass+' config.js
+#sudo sed -i '9 s+localhost+54.186.97.132+' config.js
+#sudo sed -i '15 s+localhost+ec2-54-186-97-132.us-west-2.compute.amazonaws.com+' config.js
+
+#cd ..
+#grunt migrate:up
 
 
-#instalar pip para manejar paquetes de piython
-sudo apt-get install python-pip
+
+
 
