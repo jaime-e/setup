@@ -1,5 +1,5 @@
 #!/bin/bash
-# simple dev environment for ubuntu no heroku
+# simple dev environment for ubuntu
 # for headless setup. 
 
 # Install nvm: node-version manager
@@ -41,20 +41,3 @@ ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
-
-#instalar python, g++, make, libpq-dev, nodejs
-
-sudo apt-get -y install python-software-properties
-sudo apt-get -y install libpq-dev
-sudo add-apt-repository -y ppa:chris-lea/node.js
-sudo apt-get -y update
-sudo apt-get -y install nodejs
-sudo apt-get -y install postgresql
-sudo apt-get -y install postgresql-client
-
-#instalar restler  http client library
-npm install restler
-
-#instalar pip para manejar paquetes de piython
-sudo apt-get install python-pip
-
