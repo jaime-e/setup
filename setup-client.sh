@@ -21,6 +21,8 @@ sudo npm install
 cp src/js/config-example.js src/js/config.js
 grunt
 
+#instalar servidor apache
+sudo apt-get -y install apache2
 
 
 
