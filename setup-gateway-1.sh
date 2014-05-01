@@ -13,4 +13,4 @@ sudo apt-get -y update
 sudo apt-get -y install nodejs
 sudo apt-get -y install postgresql
 sudo apt-get -y install postgresql-client
-
+sudo -u postgres psql postgres
