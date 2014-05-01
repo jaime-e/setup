@@ -4,10 +4,7 @@
 # Install curl
 sudo apt-get install -y curl
 
-#install npm
-sudo apt-get -y install npm
-
-# Install jshint to allow checking of JS code within emacs
+#Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
 npm install -g jshint
 
