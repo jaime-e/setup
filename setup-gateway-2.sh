@@ -5,7 +5,7 @@ sudo -u postgres createdb ripple_gateway
 
 #poner como editar postgres.conf para cambiar los postgre.conf para cambiar la ip de escucha
 
-cd /etc/postgresql/9.3/main/
+cd /etc/postgresql/9.1/main/
 
 sudo chmod 777 postgresql.conf pg_hba.conf
 sudo sed -i '59 s/#//' postgresql.conf
@@ -25,14 +25,16 @@ sudo npm install -g grunt
 sudo npm install --save ripple-gateway
 
 cd node_modules/ripple-gateway/config
-sudo sed -i '8 s+localhost+ec2-54-186-166-153.us-west-2.compute.amazonaws.com+' config.js
+sudo sed -i '8 s+localhost+ec2-54-187-182-5.us-west-2.compute.amazonaws.com+' config.js
 sudo sed -i '9 s+password+pass+' config.js
-sudo sed -i '9 s+localhost+54.186.166.153+' config.js
-sudo sed -i '15 s+localhost+ec2-54-186-166-153.us-west-2.compute.amazonaws.com+' config.js
+sudo sed -i '9 s+localhost+54.187.182.5+' config.js
+sudo sed -i '15 s+localhost+ec2-54-187-182-5.us-west-2.compute.amazonaws.com+' config.js
 
 cd ..
 sudo npm install -g grunt-db-migrate
-export DATABASE_URL=postgres://postgres:pass@54.186.166.153:5432/ripple_gateway?native=true
+cd $HOME
+export DATABASE_URL=postgres://postgres:pass@54.187.182.5:5432/ripple_gateway?native=true
+cd node_modules/ripple-gateway/
 grunt migrate:up
 
 
