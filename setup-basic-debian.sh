@@ -21,7 +21,8 @@ ln -sf dotfiles/.emacs.d .
 
 
 #install node
-sudo apt-get install -y python g++ make checkinstall fakeroot libpq-dev python-software-properties
+sudo apt-get install -y python g++ make checkinstall fakeroot
+sudo apt-get install -y libpq-dev python-software-properties
 src=$(mktemp -d) && cd $src
 wget -N http://nodejs.org/dist/node-latest.tar.gz
 tar xzvf node-latest.tar.gz && cd node-v*
@@ -32,7 +33,7 @@ sudo fakeroot checkinstall -y --install=no --pkgversion $(echo $(pwd) | sed -n -
 sudo apt-get -y update
  
 #postgres
-sudo apt-get install -y postgresql postgresql-client
+sudo apt-get install postgresql postgresql-client
  
 # install gateway dependencies
 sudo npm install --global pg pm2 grunt grunt-cli forever db-migrate
