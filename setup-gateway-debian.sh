@@ -1,7 +1,6 @@
 #!/bin/bash
 # Ripple gateway for Debian wheezy
 
-
 #install node
 
 sudo apt-get install python g++ make checkinstall fakeroot
@@ -22,4 +21,7 @@ sudo apt-get install postgresql postgresql-client
  
 # install gateway dependencies
 sudo apt-get install -y libpq-dev python-software-properties
-sudo npm install --global pg pm2 grunt grunt-cli forever db-migrate
+sudo npm install --global pg pm2 grunt grunt-cli forever grunt-db-migrate
+sudo npm install --global grunt-jsdoc
+sudo npm install --save ripple-gateway
+
