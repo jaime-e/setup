@@ -10,3 +10,5 @@ sudo sed -i '59 s/localhost/*/' postgresql.conf
 sudo sed -i '92 s+127.0.0.1/32+0.0.0.0/0+' pg_hba.conf
 sudo sed -i '94 s+::1/128+::/0+' pg_hba.conf
 
+cd $HOME
+sudo /etc/init.d/postgresql restart
