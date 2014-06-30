@@ -13,7 +13,9 @@ cd ..
 ln -s ~/node_modules/ripple-gateway/lib/data/migrations ~/node_modules/ripple-gateway/migrations
 
 cd $HOME
-export DATABASE_URL=postgres://postgres:pass@108.59.85.231:5432/ripple_gateway?native=true
+
+echo export DATABASE_URL=postgres://postgres:pass@108.59.85.231:5432/ripple_gateway?native=true >> .bashrc
+
 cd node_modules/ripple-gateway/
 grunt migrate
 
