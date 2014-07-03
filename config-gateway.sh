@@ -1,22 +1,26 @@
 #!/bin/bash
-# ripple gateway config
+# ripple gateway config development
 
 sudo -u postgres createdb ripple_gateway
 
-cd node_modules/ripple-gateway/config
-sudo sed -i '8 s+localhost+108.59.85.231+' config.js
-sudo sed -i '11 s+password+pass+' config.js
-sudo sed -i '11 s+localhost+108.59.85.231+' config.js
-sudo sed -i '23 s+localhost+108.59.85.231+' config.js
+cd gatewayd/config
+
+sudo sed -i '8 s+production+development+' config.js
+sudo sed -i '9 s+localhost+108.59.85.231+' config.js
+sudo sed -i '12 s+password+pass+' config.js
+sudo sed -i '12 s+localhost+108.59.85.231+' config.js
+sudo sed -i '24 s+localhost+108.59.85.231+' config.js
 
 cd ..
-ln -s ~/node_modules/ripple-gateway/lib/data/migrations ~/node_modules/ripple-gateway/migrations
+ln -s ~/gatewayd/lib/data/migrations ~/gatewayd/migrations
 
-cd $HOME
+cd lib/data
+cp database.example.json database.json
 
-echo export DATABASE_URL=postgres://postgres:pass@108.59.85.231:5432/ripple_gateway?native=true >> .bashrc
+sudo sed -i '3 s+DATABASE_URL+DATABASE_URL=postgres://postgres:pass@108.59.85.231:5432/ripple_gateway+' database.json 
 
-cd node_modules/ripple-gateway/
+cd ..
+cd ..
 grunt migrate
 
 

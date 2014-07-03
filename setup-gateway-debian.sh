@@ -1,6 +1,7 @@
 #!/bin/bash
 # Ripple gateway for Debian wheezy
 
+cd gatewayd
 
 #install node
 
