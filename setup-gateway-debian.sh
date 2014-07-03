@@ -1,7 +1,6 @@
 #!/bin/bash
 # Ripple gateway for Debian wheezy
 
-cd gatewayd
 
 #install node
 
@@ -17,9 +16,14 @@ sudo fakeroot checkinstall -y --install=no --pkgversion $(echo $(pwd) | sed -n -
 sudo dpkg -i node_*
  
 sudo apt-get -y update
+
+#clone gatewayd
+git clone https://github.com/ripple/gatewayd
  
 #postgres
 sudo apt-get install postgresql postgresql-client
+
+cd gatewayd
  
 # install gateway dependencies
 sudo apt-get install -y libpq-dev python-software-properties
