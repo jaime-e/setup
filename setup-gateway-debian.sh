@@ -17,11 +17,12 @@ sudo dpkg -i node_*
  
 sudo apt-get -y update
 
-#clone gatewayd
-git clone https://github.com/ripple/gatewayd
- 
 #postgres
 sudo apt-get install postgresql postgresql-client
+
+cd $home
+
+git clone https://github.com/ripple/gatewayd
 
 cd gatewayd
  
