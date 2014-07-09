@@ -26,3 +26,6 @@ sudo apt-get -y update
 
 #screen
 sudo apt-get install screen
+
+#killall
+sudo apt-get install psmisc
