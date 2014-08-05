@@ -1,5 +1,5 @@
 #!/bin/bash
-# Node.js for Debian wheezy
+# Ripple rest for Debian wheezy
 
 #install node
 
@@ -15,3 +15,10 @@ sudo fakeroot checkinstall -y --install=no --pkgversion $(echo $(pwd) | sed -n -
 sudo dpkg -i node_*
  
 sudo apt-get -y update
+ 
+#postgres
+sudo apt-get install postgresql postgresql-client
+ 
+# install gateway dependencies
+sudo apt-get install -y libpq-dev python-software-properties
+
