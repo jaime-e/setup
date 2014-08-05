@@ -29,3 +29,6 @@ sudo apt-get install screen
 
 #killall
 sudo apt-get install psmisc
+
+#locate
+sudo apt-get install locate
