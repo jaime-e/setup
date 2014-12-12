@@ -1,7 +1,5 @@
 #!/bin/bash
-# Ripple rest for Debian wheezy
-
-#install node
+# nodejs installation for debian
 
 sudo apt-get install python g++ make checkinstall fakeroot
 src=$(mktemp -d) && cd $src
@@ -15,8 +13,3 @@ sudo fakeroot checkinstall -y --install=no --pkgversion $(echo $(pwd) | sed -n -
 sudo dpkg -i node_*
  
 sudo apt-get -y update
- 
- 
-# install gateway dependencies
-sudo apt-get install -y libpq-dev python-software-properties
-
