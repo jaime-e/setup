@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#dnxapp-blobvault installation scripto for debian
 #path cd home?
 
 #2: Clone repo and install dependencies
