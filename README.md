@@ -1,3 +1,3 @@
-setup
+# SETUP
 
-Repositorio con archivos de instalacion para distintos dev environments, servicios y plataformas.
+Installation and config files for different applications and platforms
