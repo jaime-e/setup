@@ -1,3 +1,16 @@
-# SETUP
+setup.git
+=========
+Setup for ubuntu desktop.
+setup-basic-dev.sh : dev environment
+setup-ubuntu-desktop : dev environment + stable nodejs
 
-Installation and config files for different applications and platforms
+```sh
+cd $HOME
+sudo apt-get install -y git-core
+git clone https://github.com/startup-class/setup.git
+./setup/setup.sh   
+```
+
+
+
+
