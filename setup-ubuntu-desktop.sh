@@ -6,14 +6,23 @@
 # https://github.com/creationix/nvm
 
 sudo apt-get install -y curl
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest stable node
-source $HOME/.nvm/nvm.sh
-nvm install stable
-nvm use stable
+#curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+#source $HOME/.nvm/nvm.sh
+#nvm install stable
+#nvm use stable
 
-#set npm folder
+#get nodejs from package manager
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+
+#install
+sudo apt-get install nodejs
+
+#update npm
+sudo npm install -g npm
+
+#set npm folder to user owned dir
 npm config set prefix '/usr/local'
 
 #change ownership of npm folder
