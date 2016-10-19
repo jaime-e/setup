@@ -3,7 +3,6 @@
 
 sudo apt-get -y install emacs
 
-
 # git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
