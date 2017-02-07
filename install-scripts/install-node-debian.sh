@@ -1,15 +1,22 @@
 #!/bin/bash
-# nodejs installation for debian
+# nodejs installation for a recently created debian machine using nvm
 
-sudo apt-get install python g++ make checkinstall fakeroot
-src=$(mktemp -d) && cd $src
-wget -N http://nodejs.org/dist/node-latest.tar.gz
-tar xzvf node-latest.tar.gz && cd node-v*
+#set locale
+sudo sed -i 's|# es_CL.UTF-8 UTF-8|es_CL.UTF-8 UTF-8|g' /etc/locale.gen
+sudo locale-gen
 
-./configure
+#update
+sudo apt-get update && sudo apt-get -y upgrade
 
-sudo fakeroot checkinstall -y --install=no --pkgversion $(echo $(pwd) | sed -n -re's/.+node-v(.+)$/\1/p') make -j$(($(nproc)+1)) install
+#git
+sudo apt-get -y install git
 
-sudo dpkg -i node_*
- 
-sudo apt-get -y update
+#nvm
+curl https://raw.github.com/creationix/nvm/master/install.sh | bash
+
+# Load nvm and install latest production node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+nvm install stable
+nvm use stable
