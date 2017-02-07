@@ -12,7 +12,7 @@ sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get -y install git
 
 #nvm
-curl https://raw.github.com/creationix/nvm/master/install.sh | bash
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 # Load nvm and install latest production node
 export NVM_DIR="$HOME/.nvm"
